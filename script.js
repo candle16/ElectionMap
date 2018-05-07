@@ -47,15 +47,44 @@ console.log(Candidate2);
 
 //add up all of Candidate1 votes and Candidate2 votes by using loops over arrays//
 
-var addArrayforVotes = function(){
 
-      for (i = 0; i <= Candidate1.totalVotes.length; i = i + 1) {
-            var total1 = Candidate1.totalVotes[i];
+
+
+
+Candidate1.addArrayforVotes = function(){
+
+        var total1 = 0;
+      for (i = 0; i < this.totalVotes.length; i = i + 1) {
+            var total1 = this.totalVotes[i] + total1;
+            console.log(total1);
       }
 
 };
 
-addArrayforVotes();
+Candidate2.addArrayforVotes = function(){
+
+      var total2 = 0;
+  for (i = 0; i < this.totalVotes.length; i = i + 1) {
+        var total2 = this.totalVotes[i] + total2;
+        console.log(total2);
+  };
+
+};
+
+
+Candidate1.addArrayforVotes();
+Candidate2.addArrayforVotes();
+//
+
+
+  if (Candidate1.addArrayforVotes() > Candidate2.addArrayforVotes()) {
+    console.log("The winner is Candidate 1, Rowena!");
+  } else {
+    console.log("The winner is Candidate 2, Lily!");
+  };
+
+
+// };
 
 
 //
