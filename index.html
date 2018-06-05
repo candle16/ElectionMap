@@ -116,39 +116,31 @@ console.log(Candidate2);
 
 //add up all of Candidate1 votes and Candidate2 votes by using loops over arrays//
 
-
-
-Candidate1.addArrayforVotes = function(){
-
         var total1 = 0;
-      for (i = 0; i < this.totalVotes.length; i = i + 1) {
-            var total1 = this.totalVotes[i] + total1;
+      for (i = 0; i < Candidate1.totalVotes.length; i = i + 1) {
+            var total1 = Candidate1.totalVotes[i] + total1;
             console.log(total1);
-      }
+      };
 
-};
 
-Candidate2.addArrayforVotes = function(){
+
 
       var total2 = 0;
-  for (i = 0; i < this.totalVotes.length; i = i + 1) {
-        var total2 = this.totalVotes[i] + total2;
+  for (i = 0; i < Candidate2.totalVotes.length; i = i + 1) {
+        var total2 = Candidate2.totalVotes[i] + total2;
         console.log(total2);
   };
 
-};
 
 
-Candidate1.addArrayforVotes();
-Candidate2.addArrayforVotes();
-//
+// conditional for who winner is
 
 
 var winner = "???"
 
-  if ( Candidate1.addArrayforVotes() > Candidate2.addArrayforVotes() ) {
+  if ( total1 > total2 ) {
     winner = Candidate1.name;
-  } else if ( Candidate2.addArrayforVotes() > Candidate1.addArrayforVotes() ){
+  } else if ( total2 > total1 ){
     winner = Candidate2.name;
   } else {
     winner = "DRAW!";
@@ -162,30 +154,26 @@ var LilyColour = factoryPolitician("Lily deLivers", [245, 141, 136]);
 console.log("Rowena's colour is RGB " + RowenaColour.partyColour);
 console.log("Lily's colour is RGB " + LilyColour.partyColour);
 
-// setting tables up//
+// setting country table up//
 
 var countryResults = document.getElementById('countryResults');
 
 countryResults.children[0].children[0].children[0].innerText = Candidate1.name;
-countryResults.children[0].children[0].children[1].innerText = Candidate1.totalVotes;
+countryResults.children[0].children[0].children[1].innerText = total1;
 countryResults.children[0].children[0].children[2].innerText = Candidate2.name;
-countryResults.children[0].children[0].children[3].innerText = Candidate2.totalVotes;
+countryResults.children[0].children[0].children[3].innerText = total2;
 countryResults.children[0].children[0].children[4].innerText = "WINNER";
 countryResults.children[0].children[0].children[5].innerText = winner;
 
+// setting up state table
 
-// <table id='countryResults' style="position:absolute; top:10px; left:10px;">
-//     <tbody>
-//     <tr>
-//         <td class="name-1">NAME1</td>
-//         <td class="name-1">RESULTS1</td>
-//         <td class="name-2">NAME2</td>
-//         <td class="name-2">RESULTS2</td>
-//         <th>WINNER</th>
-//         <th>Name</th>
-//     </tr>
-//     </tbody>
-// </table>
+// designate state and results info to the state results table. If mouse-over on a a given state, then that state's info to pop up in the state table and that state to turn the colour allocated to the winner.
+
+// var state = map.js children code
+// var results = map.js children code
+// var stateAbbr = map.js table cell?
+//
+// state css background-color value is changed to the winner colour on mouse-over event//
 
 
 </script>
