@@ -148,11 +148,6 @@ var winner = "???"
 
 console.log("AND THE WINNER IS..." + winner + "!!!");
 
-var RowenaColour = factoryPolitician("Rowena Rocks", [132, 17, 11]);
-var LilyColour = factoryPolitician("Lily deLivers", [245, 141, 136]);
-
-console.log("Rowena's colour is RGB " + RowenaColour.partyColour);
-console.log("Lily's colour is RGB " + LilyColour.partyColour);
 
 // setting country table up//
 
@@ -165,13 +160,65 @@ countryResults.children[0].children[0].children[3].innerText = total2;
 countryResults.children[0].children[0].children[4].innerText = "WINNER";
 countryResults.children[0].children[0].children[5].innerText = winner;
 
+
+//rgb colours //
+var RowenaColour = factoryPolitician("Rowena Rocks", [132, 17, 11]);
+var LilyColour = factoryPolitician("Lily deLivers", [245, 141, 136]);
+
+console.log("Rowena's colour is RGB " + RowenaColour.partyColour);
+console.log("Lily's colour is RGB " + LilyColour.partyColour);
+
 // setting up state table
+
+
+var stateResults = document.getElementById('stateResults');
+var stateName;
+var stateAbbrev;
+var name1;
+var results1;
+var name2;
+var results2;
+var stateWinner;
+var stateWinnerName;
+
+
+stateResults.children[0].children[0].children[0].innerText = stateName;
+stateResults.children[0].children[0].children[1].innerText = stateAbbrev;
+stateResults.children[1].children[0].children[0].innerText = name1;
+stateResults.children[1].children[0].children[1].innerText = results1;
+stateResults.children[1].children[1].children[0].innerText = name2;
+stateResults.children[1].children[1].children[1].innerText = results2;
+stateResults.children[1].children[2].children[0].innerText = stateWinner;
+stateResults.children[1].children[2].children[1].innerText = stateWinnerName;
 
 // designate state and results info to the state results table. If mouse-over on a a given state, then that state's info to pop up in the state table and that state to turn the colour allocated to the winner.
 
-// var state = map.js children code
-// var results = map.js children code
-// var stateAbbr = map.js table cell?
+// notes for table set-up:
+// <table id='stateResults' style="position:absolute; bottom:10px; right:10px;">
+// //     <theader>
+//         <tr>
+//             <th>STATE NAME</th>
+//             <th>Abbreviation</th>
+//         </tr>
+//     </theader>
+//     <tbody>
+//     <tr>
+//         <td class="name-1">NAME1</td>
+//         <td class="name-1">RESULTS1</td>
+//     </tr>
+//     <tr>
+//         <td class="name-2">NAME2</td>
+//         <td class="name-2">RESULTS2</td>
+//     </tr>
+//     <tr>
+//         <td class="winner">WINNER:</td>
+//         <td class="winner">WINNER NAME</td>
+//     </tr>
+//     </tbody>
+// </table>
+
+
+//
 //
 // state css background-color value is changed to the winner colour on mouse-over event//
 
